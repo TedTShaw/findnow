@@ -19,6 +19,19 @@
     <label for="phone">Phone:</label><input ng-model="vm.phone" type="text" class="form-control">
     <label for="email">Email:</label><input ng-model="vm.email" type="email" class="form-control">
     <!-- <label for="photo">Photo:</label><input type="file" name="filefield"> -->
+    <h4>Upload on file select</h4>
+    <button type="file" ngf-select="uploadFiles($file, $invalidFiles)"
+            accept="image/*" ngf-max-height="2000" ngf-max-size="2MB">
+        Select File</button>
+    <br><br>
+    File:
+    <div style="font:smaller">{{f.name}} {{errFile.name}} {{errFile.$error}} {{errFile.$errorParam}}
+        <span class="progress" ng-show="f.progress >= 0">
+            <div style="width:{{f.progress}}%"
+                 ng-bind="f.progress + '%'"></div>
+        </span>
+    </div>
+    {{errorMsg}}
 
     <button ng-click="vm.createPost(vm.subject, vm.category, vm.description, vm.name, vm.phone, vm.email)" class="btn btn-lg btn-success pull-right" type="submit" name="report">Submit</button>
   </form>
