@@ -17,3 +17,4 @@
 ### Getting Started
 - The Website can be reached  [Here](https://findnow.herokuapp.com)
 - Github can be reached [Here](https://github.com/ibrianfrancisco/findnow)
+- Trello can be reached [Here](https://trello.com/b/ESqrOPzF/find-now)
