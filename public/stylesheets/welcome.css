@@ -34,20 +34,29 @@ a.welcome-text:hover {
   height: 100%;
 }
 
-button.item-box {
-  min-height: 230px;
-  font-family: sans-serif;
-  font-weight: 100;
-  letter-spacing: 1px;
-}
-
-.item-box {
+.button {
   width: 50vw;
+  min-height: 230px;
   height: 40vh;
   font-size: 50px;
+  font-family: sans-serif, Arial, Helvetica,;
+  font-weight: 100;
+  letter-spacing: 1px;
   text-align: center;
   padding: 10px;
   margin: 25px;
+}
+
+.button--state-success {
+  color: #FFF;
+  background: #569E3D linear-gradient(#79D858, #569E3D) repeat-x;
+  border-color: #4A993E;
+}
+
+.button--state-danger {
+  color: #FFF;
+  background: #a90e01 linear-gradient(#ca3d20, #a90e00) repeat-x;
+  border-color: #9c0c00;
 }
 
 @media all and (max-width: 650px) {
@@ -57,7 +66,7 @@ button.item-box {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .item-box {
+  .button {
     min-height: 20vh;
     width: 90vw;
     font-size: 8.5vw;
