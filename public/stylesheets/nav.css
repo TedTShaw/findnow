@@ -13,8 +13,11 @@ nav {
 
 nav > * {
   color: #fff;
-  text-decoration: none;
   font-weight: 100;
+}
+
+nav a:hover {
+  color: #fff;
 }
 
 body .fixed-nav {
@@ -28,6 +31,7 @@ body.show-nav #main a {
   font-size: 28px;
   letter-spacing: 3px;
   border-radius: 0;
+  text-decoration: none;
 }
 
 .navbar {
@@ -37,10 +41,12 @@ body.show-nav #main a {
 .navbar a {
   letter-spacing: 3px;
   font-size: 28px;
+  text-decoration: none;
 }
 
 #main a {
   font-size: 60px;
+  text-decoration: none;
   transition: all 0.3s;
   letter-spacing: 7px;
   display: inline-block;
