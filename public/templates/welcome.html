@@ -1,15 +1,16 @@
 <nav id="main" class="fixed-nav">
   <a href="#">Find Now</a>
 </nav>
+<div class="overlay"></div>
 <header class="welcome-bg">
   <div></div>
-  <div>
-    <h1 class="welcome-text">Lost Your Items? No Problem.</h1>
-    <p class="welcome-text">FindNow uses a reliable, easy-to-use posting forum
+  <div class="header-caption">
+    <h1 class="header-text">Lost Your Items? No Problem.</h1>
+    <p class="header-text">FindNow uses a reliable, easy-to-use posting forum
     for you to <br>quickly find your lost items without all the
     frustration and lost time.</p>
   </div>
-  <a onClick="navigation()" data-nav-section="info" class="welcome-text">See More Below</a>
+  <a onClick="navigation()" data-nav-section="info" class="header-text">See More Below</a>
 </header>
 <div id="welcome-container" data-section="info">
   <button ui-sref="categories" class="button button--state-success">Find My Lost Items</button>
@@ -23,8 +24,8 @@
   }
 
   function navigation() {
-  const section = document.querySelector('a[class="welcome-text"]');
-    $('body').on('click', 'a[class="welcome-text"]', (e) => {
+  const section = document.querySelector('a[class="header-text"]');
+    $('body').on('click', 'a[class="header-text"]', (e) => {
       $('html, body').animate({
         scrollTop: section.offsetTop
       }, 1000, 'easeInOutExpo');

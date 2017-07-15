@@ -8,6 +8,13 @@ nav {
   font-size: 30px;
   background-color: rgba(0,0,0,0);
   text-align: center;
+  z-index: 9999;
+}
+
+nav > * {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 100;
 }
 
 body .fixed-nav {
@@ -18,7 +25,6 @@ body.show-nav nav {
   background: #000;
 }
 body.show-nav #main a {
-  color: #fff;
   font-size: 28px;
   letter-spacing: 3px;
   border-radius: 0;
@@ -29,20 +35,14 @@ body.show-nav #main a {
   border-radius: 0;
 }
 .navbar a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 100;
   letter-spacing: 3px;
   font-size: 28px;
 }
 
 #main a {
-  color: #000;
   font-size: 60px;
   transition: all 0.3s;
-  font-weight: 100;
   letter-spacing: 7px;
-  text-decoration: none;
   display: inline-block;
   -webkit-user-select: none;
   -moz-user-select: none;

@@ -7,24 +7,33 @@
   justify-content: space-between;
   height: 100vh;
   text-align: center;
+  opacity: 1;
+  z-index: 2;
 }
-.welcome-text {
+.header-caption {
+  opacity: 1;
+  z-index: 3;
+}
+
+.header-text {
   margin-bottom: 10px;
   color: #fff;
   font-weight: 300;
   text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.7);
   padding: 0 6px;
+  opacity: 1;
+  z-index: 3;
 }
 .welcome-bg div h1 {
   font-size: 3.5em;
 }
-p.welcome-text,
-a.welcome-text {
+p.header-text,
+a.header-text {
   font-size: 1.6em;
   text-decoration: none;
 }
 
-a.welcome-text:hover {
+a.header-text:hover {
   color: #fff;
 }
 
@@ -32,6 +41,15 @@ a.welcome-text:hover {
   display: flex;
   align-items: flex-start;
   height: 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .button {
@@ -74,8 +92,8 @@ a.welcome-text:hover {
   .welcome-bg div h1 {
     font-size: 7.5vw;
   }
-  p.welcome-text,
-  a.welcome-text {
+  p.header-text,
+  a.header-text {
     font-size: 3.4vw;
   }
 }
