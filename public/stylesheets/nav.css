@@ -10,13 +10,14 @@ nav {
   text-align: center;
   z-index: 9999;
 }
-
 nav > * {
   color: #fff;
   font-weight: 100;
 }
-
 nav a:hover {
+  color: #fff;
+}
+nav a:focus {
   color: #fff;
 }
 
