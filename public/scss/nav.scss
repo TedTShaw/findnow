@@ -9,16 +9,14 @@ nav {
   background-color: rgba(0,0,0,0);
   text-align: center;
   z-index: 9999;
+  a:hover,
+  a:focus {
+    color: #fff;
+  }
 }
 nav > * {
   color: #fff;
   font-weight: 100;
-}
-nav a:hover {
-  color: #fff;
-}
-nav a:focus {
-  color: #fff;
 }
 
 body .fixed-nav {
@@ -38,11 +36,11 @@ body.show-nav #main a {
 .navbar {
   background: #000;
   border-radius: 0;
-}
-.navbar a {
-  letter-spacing: 3px;
-  font-size: 28px;
-  text-decoration: none;
+  a {
+    letter-spacing: 3px;
+    font-size: 28px;
+    text-decoration: none;
+  }
 }
 
 #main a {

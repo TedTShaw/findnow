@@ -2,15 +2,13 @@
   padding: 20px;
   width: 50vw;
   margin: 0 auto;
+  p {
+    font-size: 1.5em;
+    margin: 0 auto;
+  }
 }
-
 .post-details > * {
   text-align: center;
-}
-
-.post-details p {
-  font-size: 1.5em;
-  margin: 0 auto;
 }
 
 @media all and (max-width: 950px) {

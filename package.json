@@ -18,10 +18,11 @@
   },
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^2.3.1",
     "gulp-browserify": "^0.5.1",
     "gulp-clean-css": "^3.5.0",
+    "gulp-sass": "^3.1.0",
     "gulp-uglify": "^3.0.0",
-    "vinyl-buffer": "^1.0.0",
-    "gulp-autoprefixer": "^2.3.1"
+    "vinyl-buffer": "^1.0.0"
   }
 }

@@ -1,4 +1,5 @@
 const gulp = require('gulp'),
+      sass = require('gulp-sass'),
       uglify = require('gulp-uglify'),
       browserify = require('browserify'),
       buffer = require('vinyl-buffer'),
@@ -6,7 +7,8 @@ const gulp = require('gulp'),
       autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('minify-css', () => {
-  return gulp.src('public/stylesheets/style.css')
+  return gulp.src('public/scss/style.scss')
+    .pipe(sass())
     .pipe(autoprefixer())
     .pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(gulp.dest('public/dist/css'));
@@ -22,4 +24,4 @@ gulp.task('browserify', () => {
 
 gulp.task('default', ['browserify', 'minify-css']);
 
-gulp.watch(['public/javascripts/**/*.js', 'public/stylesheets/*.css'], ['default']);
+gulp.watch(['public/javascripts/**/*.js', 'public/scss/*.scss'], ['default']);

@@ -27,24 +27,24 @@ input[type=search]:focus {
 
 .banner {
   z-index: -100;
+  h1 {
+    text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.7);
+  }
 }
 .banner > * {
   z-index: 10;
 }
-.banner h1 {
-  text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.7);
-}
 
 .breadcrumbs {
   padding: 5px 20px;
-  background: #f5f5f5
+  background: #f5f5f5;
+  a:hover {
+    color: #333;
+  }
 }
 .breadcrumbs > * {
   color: #333;
   cursor: pointer;
-}
-.breadcrumbs a:hover {
-  color: #333;
 }
 
 .posts-cover {
@@ -59,7 +59,6 @@ input[type=search]:focus {
   flex-direction: column;
   align-items: center;
 }
-
 .post > * {
   text-align: center;
 }
