@@ -1,5 +1,21 @@
-<nav class="navbar" style="margin: 0">
-  <a href="#">Find Now</a>
+<nav class="navbar">
+  <a href="#" class="logo" id="logo">Find Now</a>
+  <div class="dropdown pull-right">
+    <li class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      ☰
+    </li>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+      <li ng-show="navCtrl.isLoggedIn()">
+        <a ng-click="navCtrl.logout()">Log Out</a>
+      </li>
+      <li ng-show="!navCtrl.isLoggedIn()">
+        <a ui-sref="login">Log in</a>
+      </li>
+      <li ng-show="!navCtrl.isLoggedIn()">
+        <a ui-sref="signup">Sign Up</a>
+      </li>
+    </ul>
+  </div><!-- End of Dropdown -->
 </nav>
 
 <div class="forum-overlay"></div>

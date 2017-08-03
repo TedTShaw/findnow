@@ -16,7 +16,11 @@ gulp.task('minify-css', () => {
 
 gulp.task('browserify', () => {
   return gulp.src(['public/javascripts/app.js',
-                   'public/javascripts/services/*.js'])
+                   'public/javascripts/services/auth-interceptor.js',
+                   'public/javascripts/services/post-service.js',
+                   'public/javascripts/controllers/nav-controller.js',
+                   'public/javascripts/controllers/post-controller.js',
+                   'public/javascripts/controllers/user-controller.js'])
   .pipe(buffer())
   .pipe(uglify())
   .pipe(gulp.dest('public/dist/js'));

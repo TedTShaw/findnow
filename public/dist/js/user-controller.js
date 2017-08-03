@@ -1,0 +1,1 @@
+!function(){"use strict";function n(n,e){var o=this;o.signup=function(){e.signup(o.user).then(function(){n.go("welcome")}),o.user={}},o.login=function(){e.login(o.user).then(function(){n.go("welcome")},function(){n.go("login")}),o.user={}}}angular.module("app").controller("UserController",n),n.$inject=["$state","UserService"]}();

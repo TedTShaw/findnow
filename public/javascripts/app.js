@@ -1,24 +1,66 @@
 (function() {
 'use strict';
 
-  angular.module('app', ['ui.router', 'ngResource', 'ngFileUpload'])
-    .config(configRoutes);
+  angular.module('app', ['ui.router', 'ngResource'])
+    .config(configRoutes)
+    .run(runBlock)
+    .run(loginBlock);
+
+    runBlock.$inject = ['$rootScope', '$state', 'UserService'];
+
+    function runBlock($rootScope, $state, UserService) {
+      $rootScope.$on('$stateChangeStart', function(evt, toState) {
+        if(toState.loginRequired && !UserService.isLoggedIn()) {
+          evt.preventDefault();
+          $state.go('login');
+        }
+      });
+    }
+
+    loginBlock.$inject = ['$rootScope', '$state', 'UserService'];
+
+    function loginBlock($rootScope, $state, UserService) {
+      $rootScope.$on('$stateChangeStart', function(evt, toState) {
+        if(toState.loggedIn && UserService.isLoggedIn()) {
+          evt.preventDefault();
+          $state.go('welcome');
+        }
+      });
+    }
 
   configRoutes.$inject = ['$stateProvider', '$urlRouterProvider', '$httpProvider'];
 
   function configRoutes($stateProvider, $urlRouterProvider, $httpProvider) {
 
+    $httpProvider.interceptors.push('AuthInterceptor');
+
     $stateProvider
 
     .state('welcome', {
       url: '/welcome',
-      templateUrl: 'templates/welcome.html'
+      templateUrl: 'templates/welcome.html',
+      controller: 'NavController as navCtrl'
+    })
+
+    .state('login', {
+      url: '/login',
+      templateUrl: 'templates/users/login.html',
+      controller: 'UserController as userCtrl',
+      loggedIn: true
+    })
+
+    .state('signup', {
+      url: '/signup',
+      templateUrl: 'templates/users/signup.html',
+      controller: 'UserController as userCtrl',
+      loggedIn: true
     })
 
     .state('reportform', {
       url: '/form',
       templateUrl: 'templates/reportform.html',
-      controller: 'ReportController as vm'
+      controller: 'ReportController as vm',
+      loginRequired: true
     })
 
     .state('thankyou', {

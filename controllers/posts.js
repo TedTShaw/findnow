@@ -1,4 +1,5 @@
 const Post = require('../models/post');
+const User = require('../models/user');
 
 module.exports = {
   getAllPosts,
@@ -19,7 +20,14 @@ function getPost(req, res, next) {
 }
 
 function createPost(req, res, next) {
-  Post.create(req.body)
-  .then(post =>res.json(post))
-  .catch(err => res.status(500).json(err));
+  let user = User.findById(req.user._id, (err, user) => {
+    Post.create(req.body)
+    .then(post => {
+      user.posts.push(post._id);
+      post.user = user._id;
+      post.save();
+      user.save();
+      res.status(201).json(post);
+    }).catch(err => res.status(400).json(err));
+  })
 }

@@ -9,6 +9,24 @@ nav {
   background-color: rgba(0,0,0,0);
   text-align: center;
   z-index: 9999;
+  li {
+    text-decoration: none;
+    list-style: none;
+    display: inline-block;
+    width: 100%;
+  }
+  .logo {
+    font-size: 60px;
+    text-decoration: none;
+    margin-left: 27px;
+    transition: all 0.3s;
+    letter-spacing: 7px;
+    display: inline-block;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
   a:hover,
   a:focus {
     color: #fff;
@@ -24,9 +42,9 @@ body .fixed-nav {
 }
 body.show-nav nav {
   opacity: 1;
-  background: #000;
+  background: #000000;
 }
-body.show-nav #main a {
+body.show-nav #main .logo {
   font-size: 28px;
   letter-spacing: 3px;
   border-radius: 0;
@@ -36,22 +54,22 @@ body.show-nav #main a {
 .navbar {
   background: #000;
   border-radius: 0;
-  a {
+  margin: 0;
+  #logo {
     letter-spacing: 3px;
     font-size: 28px;
     text-decoration: none;
   }
 }
 
-#main a {
-  font-size: 60px;
-  text-decoration: none;
-  transition: all 0.3s;
-  letter-spacing: 7px;
-  display: inline-block;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+.dropdown-menu {
+  top: 90%;
+  min-width: 0;
+  text-align: center;
+  padding: 8px 0;
+  li a {
+    padding: 5px 20px;
+    line-height: 25px;
+    margin: 0;
+  }
 }
-

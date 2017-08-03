@@ -16,7 +16,7 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-// require('ejs').delimiter = '$';
+require('ejs').delimiter = '$';
 
 // uncomment after placing your favicon in /public
 // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -26,6 +26,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// our custom middleware to add user to req
+app.use( require('./config/auth') );
 // app.use(methodOverride('_method'))
 app.use('/', index);
 app.use('/api', apiRoutes);

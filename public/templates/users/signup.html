@@ -1,0 +1,36 @@
+<nav class="navbar">
+  <a href="#" class="logo" id="logo">Find Now</a>
+  <div class="dropdown pull-right">
+    <li class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      ☰
+    </li>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+      <li ng-show="navCtrl.isLoggedIn()">
+        <a ng-click="navCtrl.logout()">Log Out</a>
+      </li>
+      <li ng-show="!navCtrl.isLoggedIn()">
+        <a ui-sref="login">Log in</a>
+      </li>
+      <li ng-show="!navCtrl.isLoggedIn()">
+        <a ui-sref="signup">Sign Up</a>
+      </li>
+    </ul>
+  </div><!-- End of Dropdown -->
+</nav>
+
+<div class="container login-box">
+  <div class="text-center">
+    <div class="form-login">
+      <h4>Create an Account.</h4>
+      <form class="form-signin" ng-submit="userCtrl.signup()">
+        <input ng-model="userCtrl.user.name" placeholder="name" type="text" class="form-control input-sm chat-input" required>
+        <br>
+        <input ng-model="userCtrl.user.email" placeholder="email" type="email" class="form-control input-sm chat-input" required>
+        <br>
+        <input ng-model="userCtrl.user.password" placeholder="password" type="password" class="form-control input-sm chat-input" required>
+        <br>
+        <button class="btn btn-md btn-success" type="submit" name="action">register</button>
+      </form>
+    </div>
+  </div>
+</div>

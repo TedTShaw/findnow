@@ -1,0 +1,1 @@
+!function(){"use strict";function e(e,o){var t=this;t.logout=function(){o.logout(),e.go("welcome")},t.getUser=o.getUser,t.isLoggedIn=o.isLoggedIn}angular.module("app").controller("NavController",e),e.$inject=["$state","UserService"]}();

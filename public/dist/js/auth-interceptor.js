@@ -1,0 +1,1 @@
+!function(){"use strict";function e(e){return{request:function(r){var t=e.getToken();return t&&(r.headers.Authorization="Bearer "+t),r},response:function(r){var t=r.headers("Authorization");return t&&e.setToken(t),r}}}angular.module("app").factory("AuthInterceptor",e),e.$inject=["TokenService"]}();

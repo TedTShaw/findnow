@@ -18,13 +18,17 @@
   </div><!-- End of Dropdown -->
 </nav>
 
-<header class="banner">
-  <h1>Categories</h1>
-</header>
-
-<div class="category-cover">
-  <a ui-sref="events" class="box"><h1>Events</h1></a>
-  <a ui-sref="restaurants" class="box"><h1>Restaurants</h1></a>
-  <a ui-sref="businesses" class="box"><h1>Businesses</h1></a>
-  <a ui-sref="publicareas" class="box"><h1>Public Areas</h1></a>
+<div class="container login-box">
+  <div class="text-center">
+    <div class="form-login">
+      <h4>Welcome back.</h4>
+      <form class="form-signin" ng-submit="userCtrl.login()">
+        <input type="email" class="form-control input-sm chat-input" ng-model="userCtrl.user.email" placeholder="email" required/>
+        </br>
+        <input type="password" class="form-control input-sm chat-input" ng-model="userCtrl.user.password" placeholder="password" required/>
+        </br>
+        <button class="btn btn-md btn-primary" type="submit" name="action">login</button>
+      </form>
+    </div>
+  </div>
 </div>
