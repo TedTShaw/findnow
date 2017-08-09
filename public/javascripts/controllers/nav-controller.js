@@ -5,9 +5,9 @@
     .module('app')
     .controller('NavController', NavController);
 
-  NavController.$inject = ['$state', 'UserService'];
+  NavController.$inject = ['$http', '$state', 'UserService'];
 
-  function NavController($state, UserService) {
+  function NavController($http, $state, UserService) {
     var vm = this;
 
     vm.logout = function() {
@@ -18,6 +18,9 @@
     vm.getUser = UserService.getUser;
     vm.isLoggedIn = UserService.isLoggedIn;
 
+    $http.get('/api/users/me').then(function(res) {
+      vm.user = res.data;
+    });
   }
 
 })();

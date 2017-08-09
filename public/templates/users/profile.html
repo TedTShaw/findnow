@@ -21,22 +21,8 @@
   </div><!-- End of Dropdown -->
 </nav>
 
-<div class="forum-overlay"></div>
-<header class="banner" style="background: url(/images/busycity.jpg); background-size: cover;">
-  <h1>Public Areas</h1>
-  <input type="search" ng-model="search" placeholder="Search..." size="30">
-</header>
-
-<div class="breadcrumbs">
-  <a ui-sref="welcome">Home</a> /
-  <a ui-sref="categories">Categories</a>
-</div>
-
-<div class="posts-cover">
-  <div class="post" ng-repeat="post in posts | filter: 'public areas' | filter: search | orderBy:'date' track by $index">
-    <h4>Subject: {{post.subject}}</h4>
-    <h4>Contact: {{post.name}}, {{post.phone}}</h4>
-    <button class="btn btn-sm btn-info" ng-click="vm.getPost(post._id)">Learn More</button>
-    <hr>
-  </div>
+<h1 class="text-center">{{navCtrl.user.name}}</h1>
+<div class="profile-box container">
+  <label for="email">Email:</label> {{navCtrl.user.email}}
+  <label for="phone">Phone:</label> {{navCtrl.user.phone}}
 </div>

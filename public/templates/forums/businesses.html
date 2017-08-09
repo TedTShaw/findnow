@@ -6,6 +6,9 @@
     </li>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
       <li ng-show="navCtrl.isLoggedIn()">
+        <a ui-sref="profile">{{navCtrl.user.name}}</a>
+      </li>
+      <li ng-show="navCtrl.isLoggedIn()">
         <a ng-click="navCtrl.logout()">Log Out</a>
       </li>
       <li ng-show="!navCtrl.isLoggedIn()">

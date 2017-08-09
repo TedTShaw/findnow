@@ -1,1 +1,1 @@
-!function(){"use strict";function e(e,o){var t=this;t.logout=function(){o.logout(),e.go("welcome")},t.getUser=o.getUser,t.isLoggedIn=o.isLoggedIn}angular.module("app").controller("NavController",e),e.$inject=["$state","UserService"]}();
+!function(){"use strict";function e(e,t,o){var n=this;n.logout=function(){o.logout(),t.go("welcome")},n.getUser=o.getUser,n.isLoggedIn=o.isLoggedIn,e.get("/api/users/me").then(function(e){n.user=e.data})}angular.module("app").controller("NavController",e),e.$inject=["$http","$state","UserService"]}();

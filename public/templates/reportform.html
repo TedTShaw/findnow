@@ -6,6 +6,9 @@
     </li>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
       <li ng-show="navCtrl.isLoggedIn()">
+        <a ui-sref="profile">{{navCtrl.user.name}}</a>
+      </li>
+      <li ng-show="navCtrl.isLoggedIn()">
         <a ng-click="navCtrl.logout()">Log Out</a>
       </li>
       <li ng-show="!navCtrl.isLoggedIn()">
@@ -18,9 +21,12 @@
   </div><!-- End of Dropdown -->
 </nav>
 
+
 <div class="form-container">
+  <h1 class="text-center">Report Missing Item</h1>
   <form class="report-form">
     <h3>Information:</h3>
+    <label for="subject">Subject:</label><input id="form-subject" ng-model="vm.subject" type="text" class="form-control" required>
     <label for="categories">Category:</label>
     <select ng-model="vm.category" name="category">
       <option value="Events">Events</option>
@@ -28,12 +34,11 @@
       <option value="Businesses">Businesses</option>
       <option value="Public Areas">Public Areas</option>
     </select>
-    <label for="subject">Subject:</label><input ng-model="vm.subject" type="text" class="form-control" required>
     <label for="description">Description:</label><textarea ng-model="vm.description" class="form-control" rows="3" required></textarea>
     <h3>Contact Info:</h3>
-    <label for="name">Name:</label><input ng-model="vm.name" type="text" class="form-control">
-    <label for="phone">Phone:</label><input ng-model="vm.phone" type="text" class="form-control">
-    <label for="email">Email:</label><input ng-model="vm.email" type="email" class="form-control">
+    <label for="name">Name:</label><input ng-model="vm.name" type="text" value="{{vm.name=navCtrl.user.name}}" class="form-control">
+    <label for="phone">Phone:</label><input ng-model="vm.phone" type="text" value="{{vm.phone=navCtrl.user.phone}}" class="form-control">
+    <label for="email">Email:</label><input ng-model="vm.email" type="email" value="{{vm.email=navCtrl.user.email}}" class="form-control">
     <!-- <label for="photo">Photo:</label><input type="file" name="filefield"> -->
     <h4>Upload on file select</h4>
     <button type="file" ngf-select="uploadFiles($file, $invalidFiles)"

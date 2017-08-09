@@ -6,6 +6,9 @@
     </li>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
       <li ng-show="navCtrl.isLoggedIn()">
+        <a ui-sref="profile">{{navCtrl.user.name}}</a>
+      </li>
+      <li ng-show="navCtrl.isLoggedIn()">
         <a ng-click="navCtrl.logout()">Log Out</a>
       </li>
       <li ng-show="!navCtrl.isLoggedIn()">
@@ -26,6 +29,8 @@
         <input ng-model="userCtrl.user.name" placeholder="name" type="text" class="form-control input-sm chat-input" required>
         <br>
         <input ng-model="userCtrl.user.email" placeholder="email" type="email" class="form-control input-sm chat-input" required>
+        <br>
+        <input ng-model="userCtrl.user.phone" placeholder="phone" type="text" maxlength="12" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Format example: 555-555-5555" class="form-control input-sm chat-input">
         <br>
         <input ng-model="userCtrl.user.password" placeholder="password" type="password" class="form-control input-sm chat-input" required>
         <br>

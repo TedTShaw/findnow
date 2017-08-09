@@ -38,9 +38,9 @@
 
     .state('welcome', {
       url: '/welcome',
-      templateUrl: 'templates/welcome.html',
-      controller: 'NavController as navCtrl'
+      templateUrl: 'templates/welcome.html'
     })
+
 
     .state('login', {
       url: '/login',
@@ -55,6 +55,12 @@
       controller: 'UserController as userCtrl',
       loggedIn: true
     })
+
+    // .state('profile', {
+    //   url: '/profile',
+    //   templateUrl: 'templates/users/profile.html',
+    //   loginRequired: true
+    // })
 
     .state('reportform', {
       url: '/form',

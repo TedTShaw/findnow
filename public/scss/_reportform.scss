@@ -1,14 +1,30 @@
+#form-subject {
+  width: 65%;
+  margin: 5px 10px 5px 0;
+  display: inline;
+}
+
 .report-form {
   width: 60%;
   margin: 0 auto;
 }
 
-select {
+label[for="categories"] {
+  margin-right: 10px;
+}
+
+label[for="categories"],
+select[name="category"] {
+  display: inline;
+}
+
+select,
+label {
   display: block;
 }
 
 .report-form > * {
-  margin: 5px 0;
+  margin: 10px 0;
 }
 
 .form-container {
@@ -28,5 +44,14 @@ select {
 @media all and (max-width: 650px) {
   .report-form {
     width: 75%;
+  }
+}
+@media all and (max-width: 905px) {
+  #form-subject {
+    width: 100%;
+  }
+  label[for="categories"] {
+    display: inline-block;
+    margin-right: 10px;
   }
 }

@@ -8,9 +8,9 @@
 
   function userService($http, TokenService) {
 
-    var user = null;
+    let user = null;
 
-    var service = {
+    let service = {
       login,
       logout,
       signup,
@@ -45,7 +45,7 @@
     return service;
 
     function getUserFromToken() {
-      var token = TokenService.getToken();
+      let token = TokenService.getToken();
       return token ? JSON.parse(atob(token.split('.')[1])).user : null;
     }
   }
